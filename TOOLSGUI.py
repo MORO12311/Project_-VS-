@@ -2,13 +2,19 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
+st.title("📊 Job Listings Interactive Analysis")
 
-# Load the cleaned data (make sure this path is accessible or change to your saved path)
-data_path = r"D:\\Downloads\\cleaned_jobs_data.csv"
-df = pd.read_csv(data_path)
-df.columns = df.columns.str.strip()
+uploaded_file = st.file_uploader("D:/Downloads/cleaned_jobs_data.csv", type="csv")
+if not uploaded_file:
+    st.info("👈 Please upload a CSV file from your system to get started.")
+    st.stop()
 
-
+try:
+    df = pd.read_csv(uploaded_file)
+except Exception as e:
+    st.error(f"❌ Error loading file: {e}")
+    st.stop()
 # === 7. تحديد مستوى الوظيفة ===
 def determine_job_level(experience):
     if experience is None:
