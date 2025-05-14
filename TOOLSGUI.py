@@ -76,12 +76,18 @@ filtered_df["Work Type"].value_counts().plot(kind="barh", ax=ax2, color=sns.colo
 ax2.set_title("Work Type Frequency")
 st.pyplot(fig2)
 
-# Boxplot: Experience vs. Job Level
-st.markdown("### Experience by Job Level")
-fig3, ax3 = plt.subplots()
-sns.boxplot(data=filtered_df, x="Job Level", y="Experience (Yrs)", ax=ax3)
-ax3.set_title("Experience Distribution by Job Level")
-st.pyplot(fig3)
+
+
+# # Boxplot: Experience vs. Job Level
+# st.markdown("### Experience by Job Level")
+# fig3, ax3 = plt.subplots()
+# sns.boxplot(data=filtered_df, x="Job Level", y="Experience (Yrs)", ax=ax3)
+# ax3.set_title("Experience Distribution by Job Level")
+# st.pyplot(fig3)
+
+
+
+
 
 # Top Cities with Jobs
 st.markdown("### Top Cities with Jobs")
